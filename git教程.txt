@@ -32,6 +32,7 @@ id_rsa.pub是公钥
 git remote add origin url
 把本地库的内容推送到远程，使用git push
 第一次git push -u origin master将文帝仓库分支master内容推送到远程仓库中
+同步：git push origin master
 从远程仓库克隆：
 git clone url
 创建和合并分支：
