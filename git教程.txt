@@ -1,0 +1,45 @@
+git教程
+	1. git init将目录变为git可管理的仓库
+2.提交文件：
+git add 文件名，将文件添加到暂存区
+
+git commit -m '添加提交的注释' 文件提交到仓库
+git status用来查看结果，状态
+modified: 文件名 表示文件被修改了，但是未被提交
+git diff 文件名 查看修改的内容
+git log显示最近到最远的显示日志
+git log -pretty=oneline美化
+版本回退：
+git reset --hard HEAD^回退一个版本
+git reset --hard HEAD~n回退n个版本
+使用cat 文件名可查看文件内容
+git reflog得到版本号
+从而可以
+git reset --hard 版本号 回到最新版本
+撤销操作：git checkout --file可以丢弃工作区的修改
+删除文件：rm 文件名
++commit
+如果尚未commit，可以使用撤销操作取消删除
+远程仓库：
+创建github账号
+1.创建ssh key
+输入ssh-keygen -t rsa -C 邮箱
+id_rsa是私钥
+id_rsa.pub是公钥
+登陆github，打开setting中的ssh key页面，add ssh key 跳上任意title ，在key文本框粘贴公钥，add
+2.添加远程库：远程同步，
+首先在github上创建新的仓库：creat a new repo
+git remote add origin url
+把本地库的内容推送到远程，使用git push
+第一次git push -u origin master将文帝仓库分支master内容推送到远程仓库中
+从远程仓库克隆：
+git clone url
+创建和合并分支：
+git checkout -b dev创建并指向dev分支
+相当于两条指令：
+git branch dev创建分支
+git checkout dev切换分支
+git branch查看当前分支
+将分支dev 的内容合并到master：
+git merge dev用于合并指定分支到当前分支
+删除分支：git branch -d dev
