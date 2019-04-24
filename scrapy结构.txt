@@ -1,0 +1,8 @@
+scrapy框架：
+spider发送请求给引擎，引擎将请求给调度器，调度器返回下一个请求给引擎，引擎将请求通过下载器中间件转发给下载器，一旦页面下载完成，下载器生成一个该页面的response，并将通过下载中间件发送给引擎，引擎从下载器中接受到response并通过spider中间件发送给spider处理，spider处理response并返回爬取到的item及后续可能存在的请求给引擎，引擎将spider爬取到的item交给itempipeline处理，将spider返回的请求交给调度器，并请求下一个请求
+结构：
+items.py定义要抓取的字段
+pipelines.py当spider抓取到内容item后，会被送到管道文件中，清洗、去重、保存到库
+middleware.py主要是对功能的扩展，如user-agent，添加proxy
+setting.py设置文件，用来设置爬虫的默认信息，相关功能开启与否，如是否遵从robots协议，设置默认的headers
+spider编写定义的spider
