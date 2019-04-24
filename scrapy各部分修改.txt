@@ -1,0 +1,19 @@
+分支介绍
+1.items.py用于定义item，item是用来保存爬取到的数据的容器，
+需要得到的相关数据命名：
+data_name = scrapy.Field()
+2.spider.py的变化1.from projectname .items import projectnameItem
+2.allowed_domains = ['.com']#域名范围
+3.def parse中：
+item = projectnameItem()#实例化
+赋值：item可以简单理解为字典
+item['data_name'] = response.
+4.yield item
+3.pipelines.pyimport pymongo#数据库
+class classname(objec):
+这个类名后续写入settings.py中
+return item
+4.settings.py1.robotstxt_obey = false
+2.item_pipelines = {
+'.pipelines.classnamepipeline':300,}
+
